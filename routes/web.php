@@ -49,6 +49,8 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::post('orders/{order}/apply_refund', 'OrdersController@applyRefund')->name('orders.apply_refund');
     //退款
     Route::post('payment/wechat/refund_notify', 'PaymentController@wechatRefundNotify')->name('payment.wechat.refund_notify');
+    //优惠券
+    Route::get('coupon_codes/{code}', 'CouponCodesController@show')->name('coupon_codes.show');
 
 });
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
