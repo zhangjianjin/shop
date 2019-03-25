@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-
 use App\Models\Category;
 use App\Models\OrderItem;
 use App\Exceptions\InvalidRequestException;
@@ -68,6 +67,7 @@ class ProductsController extends Controller
             ],
             // 等价于 isset($category) ? $category : null
             'category' => $category ?? null,
+            // 将类目树传递给模板文件
         ]);
     }
    
