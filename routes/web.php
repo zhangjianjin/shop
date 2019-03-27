@@ -53,7 +53,8 @@ Route::group(['middleware' => ['auth', 'verified']], function() {
     Route::get('coupon_codes/{code}', 'CouponCodesController@show')->name('coupon_codes.show');
     //众筹订单
     Route::post('crowdfunding_orders', 'OrdersController@crowdfunding')->name('crowdfunding_orders.store');
-
+    //分期
+    Route::post('payment/{order}/installment', 'PaymentController@payByInstallment')->name('payment.installment');
 });
 Route::post('payment/alipay/notify', 'PaymentController@alipayNotify')->name('payment.alipay.notify');
 Route::get('products/{product}', 'ProductsController@show')->name('products.show');
